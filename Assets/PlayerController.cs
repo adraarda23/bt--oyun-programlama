@@ -13,11 +13,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") != 0)
         {
-            transform.Translate(new Vector3(1, 0, 0) * Input.GetAxis("Horizontal") * Time.deltaTime * mvSpeed);
+            transform.Translate(new Vector2(1, 0) * Input.GetAxis("Horizontal") * Time.deltaTime * mvSpeed);
         }
         if (Input.GetAxis("Vertical") != 0)
         {
-            transform.Translate(new Vector3(0, 1, 0) * Input.GetAxis("Vertical") * Time.deltaTime * mvSpeed);
+            transform.Translate(new Vector2(0, 1) * Input.GetAxis("Vertical") * Time.deltaTime * mvSpeed);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire)
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         lives--;
         // set pos 0 0 0
-        transform.position = Vector3.zero;
+        transform.position = Vector2.zero;
         if (lives < 1)
         {
             Destroy(gameObject);

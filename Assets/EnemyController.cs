@@ -12,8 +12,8 @@ public class EnemyController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        transform.Translate(Vector3.down * Time.deltaTime);
+    {   
+        transform.Translate(Vector2.down * Time.deltaTime);
         if (transform.position.y < -5f)
             Respawn();
     }
@@ -40,6 +40,6 @@ public class EnemyController : MonoBehaviour
 
     void Respawn()
     {
-        transform.position = new Vector3(Random.Range(-15f, 15f), 7f, 0);
+        transform.position = new Vector2(Random.Range(-15f, 15f), 7f);
     }
 }
