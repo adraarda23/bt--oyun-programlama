@@ -18,10 +18,11 @@ public class EnemyController : MonoBehaviour
             Respawn();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Laser")
         {
+            Debug.Log("Lazer hit");
             Destroy(other.gameObject);
             Respawn();
         }
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         Debug.Log("Hit: " + other.tag);
+        
     }
 
     void Respawn()
